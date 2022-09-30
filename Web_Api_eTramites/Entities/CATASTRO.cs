@@ -141,7 +141,8 @@ namespace Web_Api_eTramites.Entities
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = @"SELECT  c.*,b.cuit,b.celular,
-                     b.e_mail,ca.nom_calle FROM CATASTRO c
+                     b.e_mail,ca.nom_calle 
+                    FROM CATASTRO c
                     left join Badec b on b.nro_bad=c.nro_bad ";
                     cmd.Connection.Open();
                     SqlDataReader dr = cmd.ExecuteReader();
